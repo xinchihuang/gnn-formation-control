@@ -154,8 +154,9 @@ def generateData(ep,expert):
             #sc.setVrepHandles(8, '#7')
             #sc.setVrepHandles(9, '#8')
         #sc.renderScene(waitTime = 3000)
-        tf = 350 # must be greater than 1
-        errorCheckerEnabled = False
+        tf = 3
+
+        CheckerEnabled = False
         initRef(sc, i) #sc.resetPosition(robotNum*np.sqrt(2)) # Random initial position
         sc.resetPosition(5)
         #sc.resetPosition(None)
@@ -289,7 +290,7 @@ for i in range(numRun):
     #yt = yt / len(sc.robots)
     #print('Center: (',xt,',',yt,')')
 positionList = np.array(positionList)
-np.save('positionList_expert_'+str(robotNum)+'_singles.npy',positionList)
+np.save('positionLists/'+'positionList_expert_'+str(robotNum)+'_singles.npy',positionList)
 if sc:
     print('data stored')
     print(sc.dt)
